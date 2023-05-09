@@ -7,10 +7,7 @@ const phraseLine = phraseHolder.getElementsByTagName('ul')[0];
 const scoreLine = scoreboard.getElementsByTagName('ol')[0];
 
 let missed = 0;
-/* 5 and you lose */
-
-phrases = ['yolo swag'];
-phrases3 = ['tom is the bomb', 'yolo swag', 'great googly moogly', 'be good to bugs', 'the very model of a modern major general'];
+phrases = ['tom is the bomb', 'yolo swag', 'great googly moogly', 'be good to bugs', 'the very model of a modern major general'];
 
 
 function removePhrase() {
