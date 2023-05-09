@@ -17,12 +17,16 @@ function removePhrase() {
     while (phraseLine.firstChild) {
         phraseLine.removeChild(phraseLine.firstChild);
     }
-    const allButtons = document.getElementsByClassName('chosen');
+    const allButtons = qwertyHolder.getElementsByClassName('chosen');
     if (allButtons.length > 0) {
-        for (let button of allButtons) {
-            button.classList.remove('chosen');
-            button.disabled = false;
+        for (let i = allButtons.length -1; i >= 0; i--) {
+            allButtons[i].disabled = false;
+            allButtons[i].classList.remove('chosen');
         }
+    }
+    const allHearts = scoreLine.getElementsByTagName('img');
+    for (image of allHearts) {
+        image.src = 'images/liveHeart.png';
     }
 }
 
@@ -87,6 +91,8 @@ function changeScreen(word) {
     startOverlay.classList.add(word);
     startOverlay.style.display = 'block';
     startOverlay.getElementsByClassName('btn__reset')[0].textContent = 'Reset Game';
+    startOverlay.getElementsByClassName('title')[0].textContent = 'You ' + word;
+
 }
 
 qwertyHolder.addEventListener('click', (event) => {
