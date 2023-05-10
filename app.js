@@ -52,6 +52,8 @@ function addPhraseToDisplay(arr) {
         letterItem.textContent = arr[letter];
         if (arr[letter] != ' ') {
             letterItem.classList.add('letter');
+        } else {
+            letterItem.classList.add('space');
         }
         phraseLine.appendChild(letterItem);
     }
@@ -85,7 +87,9 @@ function checkForWin() {
 }
 
 function changeScreen(word) {
+    startOverlay.className = '';
     startOverlay.classList.add(word);
+    startOverlay.classList.add('start');
     startOverlay.style.display = 'block';
     startOverlay.getElementsByClassName('btn__reset')[0].textContent = 'Reset Game';
     startOverlay.getElementsByClassName('title')[0].textContent = 'You ' + word;
